@@ -1,0 +1,7 @@
+After reading the reviews I made the following changes to my domain model:- Created a Reservation class to be able to handle the history of reservations.- Created a BerthFee class.- Put spaces between attributes and their data types based on how the course literature uses spaces in their domain models. (ex. fixedCost : Money).- Changed the use of 0..* to only *.
+- Changed associations to better show the relationship between classes. Namely:
+Captured-on to: Contains and Based-on.
+Has-amount to: Pays.
+
+- Shortened the notes, that I provided in the first hand in, to only explain the additional attributes in the Event class. These attributes are not mentioned in the problem description, hence the notes.
+- BoatClub is still in the model, since it makes it easier for me to get a better grip of the domain I’m modeling.
