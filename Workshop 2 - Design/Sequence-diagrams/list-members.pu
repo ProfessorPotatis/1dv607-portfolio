@@ -1,0 +1,14 @@
+@startuml
+title Sequence diagram:\nList members
+participant Program
+participant Application << (C,#ADD1B2) >>
+participant Console << (V,#FFE6E6) >>
+participant Database << (M,#CCE6FF) >>
+
+Program -> Application: Run()
+Application -> Console: DisplayInstructions()
+Application -> Console: GetEvent()
+Application -> Console: WantsToListMembers()
+Application -> Database: GetAllMembers()
+Application -> Console: ListMembers()
+@enduml

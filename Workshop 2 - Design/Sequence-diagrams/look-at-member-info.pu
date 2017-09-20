@@ -1,0 +1,14 @@
+@startuml
+title Sequence diagram:\nLook at specific member's info
+participant Program
+participant Application << (C,#ADD1B2) >>
+participant Console << (V,#FFE6E6) >>
+participant Database << (M,#CCE6FF) >>
+
+Program -> Application: Run()
+Application -> Console: DisplayInstructions()
+Application -> Console: GetEvent()
+Application -> Console: WantsToLookAtMemberInfo()
+Application -> Database: GetMember(name, pNum, uMemberId)
+Application -> Console: ListMemberInfo()
+@enduml

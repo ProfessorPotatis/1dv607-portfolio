@@ -1,0 +1,21 @@
+@startuml
+title Sequence diagram:\nCreate member
+participant Program
+participant Application << (C,#ADD1B2) >>
+participant Console << (V,#FFE6E6) >>
+participant Database << (M,#CCE6FF) >>
+
+Program -> Application: Run()
+Application -> Console: DisplayInstructions()
+Application -> Console: GetEvent()
+Application -> Console: WantsToCreateNewMember()
+Application -> Database: MemberExist(name, pNum)
+
+alt MemberExist() = false
+    Database -> Database: GenerateUniqueMemberId()
+    Database -> Database: CreateNewMember(name, pNum, uMemberId)
+    Application -> Console: NewMemberCreated()
+else MemberExist() = true
+    Application -> Console: MemberAlreadyExist()
+end
+@enduml
