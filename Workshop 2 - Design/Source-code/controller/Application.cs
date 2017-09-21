@@ -1,4 +1,7 @@
 using System;
+using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.controller
 {
@@ -22,7 +25,13 @@ namespace MemberRegistry.controller
                     string[] memberInfo = a_view.WantsToCreateNewMember();
                     string name = memberInfo[0];
                     string pNum = memberInfo[1];
-                    a_database.MemberExist(name, pNum);
+                    if (a_database.MemberExist(name, pNum))
+                    {
+                        a_view.MemberAlreadyExist();
+                    } else
+                    {
+                        a_view.NewMemberCreated();
+                    }
                     break;
                 default:
                     break;

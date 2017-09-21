@@ -94,15 +94,27 @@ namespace MemberRegistry.view
         public string[] WantsToCreateNewMember()
         {
             System.Console.WriteLine("Create new member");
-            System.Console.WriteLine();
+            System.Console.WriteLine("-----------------");
             System.Console.WriteLine("Full name: ");
             string name = System.Console.ReadLine();
-            System.Console.WriteLine("Personal number: ");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
             string pNum = System.Console.ReadLine();
 
             string[] memberInfo = {name, pNum};
 
             return memberInfo;
+        }
+
+        public void MemberAlreadyExist()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Sorry. A member with that personal number already exists.");
+        }
+
+        public void NewMemberCreated()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Member was successfully saved to the database.");
         }
     }
 }
