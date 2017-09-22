@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.view
 {
@@ -115,6 +117,27 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine();
             System.Console.WriteLine("Member was successfully saved to the database.");
+        }
+
+        public void ListMembersCompact(JArray members)
+        {
+            for (int i = 0; i < members.Count; i++)
+            {
+                System.Console.WriteLine("\nName: " + members[i]["name"] + "\nMemberId: " + members[i]["uMemberId"] + "\nNumber of boats: " + members[i]["boats"].Count());
+            }
+        }
+
+        public void ListMembersVerbose(JArray members)
+        {
+            for (int i = 0; i < members.Count; i++)
+            {
+                System.Console.WriteLine("\nName: " + members[i]["name"] + "\nPersonal number: " + members[i]["pNum"] + "\nMemberId: " + members[i]["uMemberId"]);
+                System.Console.WriteLine("Boats: ");
+                for (int x = 0; x < members[i]["boats"].Count(); x++)
+                {
+                    System.Console.WriteLine("  " + members[i]["boats"][x]["type"] + ", " + members[i]["boats"][x]["length"]);
+                }
+            }
         }
     }
 }

@@ -1,12 +1,19 @@
 using System;
 using System.IO;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.model
 {
     class Database
     {
+        public JArray GetAllMembers()
+        {
+            string json = ReadJsonFile();
+            JArray members = ConvertJsonToJArray(json);
+
+            return members;
+        }
+
         public bool MemberExist(string name, string pNum)
         {
             string json = ReadJsonFile();

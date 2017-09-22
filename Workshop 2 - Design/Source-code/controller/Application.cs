@@ -1,6 +1,4 @@
 using System;
-using System.Linq;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.controller
@@ -32,6 +30,14 @@ namespace MemberRegistry.controller
                     {
                         a_view.NewMemberCreated();
                     }
+                    break;
+                case view.Console.Event.CompactMembersList:
+                    JArray members = a_database.GetAllMembers();
+                    a_view.ListMembersCompact(members);
+                    break;
+                case view.Console.Event.VerboseMembersList:
+                    JArray members2 = a_database.GetAllMembers();
+                    a_view.ListMembersVerbose(members2);
                     break;
                 default:
                     break;
