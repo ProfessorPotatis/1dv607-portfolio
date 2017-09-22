@@ -1,21 +1,6 @@
 {
   "members": [
     {
-      "name": "Hej",
-      "pNum": "000000-0000",
-      "uMemberId": "123FantaOchRose",
-      "boats": [
-        {
-          "type": "Sailboat",
-          "length": "5 meter"
-        },
-        {
-          "type": "Kayak/Canoe",
-          "length": "3 meter"
-        }
-      ]
-    },
-    {
       "name": "Sugar Plum",
       "pNum": "303030-3030",
       "uMemberId": "Member91190",
@@ -31,30 +16,10 @@
       ]
     },
     {
-      "name": "Bat agare",
-      "pNum": "202020-2020",
-      "uMemberId": "Member1273",
-      "boats": [
-        {
-          "type": "Other",
-          "length": "3 meter"
-        },
-        {
-          "type": "Kayak/Canoe",
-          "length": "3 meter"
-        }
-      ]
-    },
-    {
       "name": "Sofia",
       "pNum": "101010-1010",
-      "uMemberId": "Member33926",
-      "boats": [
-        {
-          "type": "Other",
-          "length": "3 meter"
-        }
-      ]
+      "uMemberId": "Member97221",
+      "boats": null
     },
     {
       "name": "Hallå",
@@ -71,17 +36,6 @@
         },
         {
           "type": "Motorsailer",
-          "length": "3 meter"
-        }
-      ]
-    },
-    {
-      "name": "Nemen",
-      "pNum": "222222-2222",
-      "uMemberId": "RaffiTuss",
-      "boats": [
-        {
-          "type": "Other",
           "length": "3 meter"
         }
       ]

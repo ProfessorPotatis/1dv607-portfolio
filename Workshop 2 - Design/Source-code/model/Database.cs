@@ -1,23 +1,15 @@
 using System;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.model
 {
     class Database
     {
-        public JArray GetAllMembers()
+        public bool MemberExist(string pNum)
         {
-            string json = ReadJsonFile();
-            JArray members = ConvertJsonToJArray(json);
-
-            return members;
-        }
-
-        public bool MemberExist(string name, string pNum)
-        {
-            string json = ReadJsonFile();
-            JArray members = ConvertJsonToJArray(json);
+            JArray members = GetAllMembers();
 
             for (int i = 0; i < members.Count; i++)
             {
@@ -26,19 +18,15 @@ namespace MemberRegistry.model
                     return true;
                 }
             }
-
-            string uMemberId = GenerateUniqueMemberId(members.Count);
-
-            for (int i = 0; i < members.Count; i++)
-            {
-                if ((string)members[i]["uMemberId"] == uMemberId)
-                {
-                    uMemberId = GenerateUniqueMemberId(members.Count);
-                }
-            }
-
-            CreateNewMember(name, pNum, uMemberId, json);
             return false;
+        }
+
+        public JArray GetAllMembers()
+        {
+            string json = ReadJsonFile();
+            JArray members = ConvertJsonToJArray(json);
+
+            return members;
         }
 
         private string ReadJsonFile()
@@ -61,7 +49,7 @@ namespace MemberRegistry.model
             return membersArray; 
         }
 
-        private string GenerateUniqueMemberId(int memberCount)
+        public string GenerateUniqueMemberId()
         {
             Random rnd = new Random();
             int num1 = rnd.Next(1000);
@@ -72,8 +60,9 @@ namespace MemberRegistry.model
             return memberId;
         }
 
-        private void CreateNewMember(string name, string pNum, string uMemberId, string json)
+        public void CreateNewMember(string name, string pNum, string uMemberId)
         {
+            string json = ReadJsonFile();
             string newMember = "{\"name\": \"" + name + "\", \"pNum\": \"" + pNum + "\", \"uMemberId\": \"" + uMemberId + "\"}";
             JObject member = JObject.Parse(newMember);
             JObject memberJsonObj = JObject.Parse(json);
@@ -82,7 +71,8 @@ namespace MemberRegistry.model
                 new JObject(
                 new JProperty("name", member["name"]),
                 new JProperty("pNum", member["pNum"]),
-                new JProperty("uMemberId", member["uMemberId"])
+                new JProperty("uMemberId", member["uMemberId"]),
+                new JProperty("boats", member["boats"])
             ));
 
             WriteToJsonFile(memberJsonObj);
@@ -90,10 +80,30 @@ namespace MemberRegistry.model
 
         private void WriteToJsonFile(JObject memberJsonObj)
         {
-            using (FileStream file = File.OpenWrite("model/MemberRegistry.json"))
+            using (FileStream file = File.Create("model/MemberRegistry.json"))
             using (StreamWriter writer = new StreamWriter(file))
             {
                 writer.Write(memberJsonObj);
+            }
+        }
+
+        public void DeleteMember(string pNum)
+        {
+            if (MemberExist(pNum))
+            {
+                string json = ReadJsonFile();
+                JObject memberJsonObj = JObject.Parse(json);
+                JToken memberToBeDeleted = null;
+
+                for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+                {
+                    if ((string)memberJsonObj["members"][i]["pNum"] == pNum)
+                    {
+                        memberToBeDeleted = memberJsonObj["members"][i];
+                    }
+                }
+                memberToBeDeleted.Remove();
+                WriteToJsonFile(memberJsonObj);
             }
         }
     }

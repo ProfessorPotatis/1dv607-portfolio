@@ -23,11 +23,13 @@ namespace MemberRegistry.controller
                     string[] memberInfo = a_view.WantsToCreateNewMember();
                     string name = memberInfo[0];
                     string pNum = memberInfo[1];
-                    if (a_database.MemberExist(name, pNum))
+                    if (a_database.MemberExist(pNum))
                     {
                         a_view.MemberAlreadyExist();
                     } else
                     {
+                        string uMemberId = a_database.GenerateUniqueMemberId();
+                        a_database.CreateNewMember(name, pNum, uMemberId);
                         a_view.NewMemberCreated();
                     }
                     break;
@@ -38,6 +40,10 @@ namespace MemberRegistry.controller
                 case view.Console.Event.VerboseMembersList:
                     JArray members2 = a_database.GetAllMembers();
                     a_view.ListMembersVerbose(members2);
+                    break;
+                case view.Console.Event.DeleteMember:
+                    string memberPNum = a_view.WantsToDeleteMember();
+                    a_database.DeleteMember(memberPNum);
                     break;
                 default:
                     break;

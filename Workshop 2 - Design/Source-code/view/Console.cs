@@ -139,5 +139,15 @@ namespace MemberRegistry.view
                 }
             }
         }
+
+        public string WantsToDeleteMember()
+        {
+            System.Console.WriteLine("Delete member");
+            System.Console.WriteLine("-----------------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
     }
 }
