@@ -66,6 +66,8 @@ namespace MemberRegistry.model
             string newMember = "{\"name\": \"" + name + "\", \"pNum\": \"" + pNum + "\", \"uMemberId\": \"" + uMemberId + "\"}";
             JObject member = JObject.Parse(newMember);
             JObject memberJsonObj = JObject.Parse(json);
+
+            member["boats"] = new JArray();
             
             memberJsonObj["members"][0].AddAfterSelf(
                 new JObject(
@@ -141,6 +143,65 @@ namespace MemberRegistry.model
                 }
             }
             return specificMember;
+        }
+
+        public void RegisterBoat(string pNum, string boatType, string boatLength)
+        {
+            string json = ReadJsonFile();
+            JObject memberJsonObj = JObject.Parse(json);
+            JArray memberToAddBoatTo = new JArray();
+
+            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+            {
+                if ((string)memberJsonObj["members"][i]["pNum"] == pNum)
+                {
+                    memberToAddBoatTo = memberJsonObj["members"][i]["boats"] as JArray;
+                }
+            }
+
+            memberToAddBoatTo.Add(
+                new JObject(
+                new JProperty("type", boatType),
+                new JProperty("length", boatLength + " meters")
+            ));
+
+            WriteToJsonFile(memberJsonObj);
+        }
+
+        public void DeleteBoat(string pNum, int boatIndex)
+        {
+            string json = ReadJsonFile();
+            JObject memberJsonObj = JObject.Parse(json);
+            JToken memberToDeleteBoatFrom = null;
+
+            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+            {
+                if ((string)memberJsonObj["members"][i]["pNum"] == pNum)
+                {
+                    memberToDeleteBoatFrom = memberJsonObj["members"][i];
+                }
+            }
+            memberToDeleteBoatFrom["boats"][boatIndex - 1].Remove();
+            WriteToJsonFile(memberJsonObj);
+        }
+
+        public void ChangeBoatInfo(string memberPNum, int boatIndex, string newBoatType, string newBoatLength)
+        {
+            string json = ReadJsonFile();
+            JObject memberJsonObj = JObject.Parse(json);
+            JToken boatToBeUpdated = null;
+
+            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+            {
+                if ((string)memberJsonObj["members"][i]["pNum"] == memberPNum)
+                {
+                    boatToBeUpdated = memberJsonObj["members"][i]["boats"][boatIndex - 1];
+                }
+            }
+
+            boatToBeUpdated["type"] = newBoatType;
+            boatToBeUpdated["length"] = newBoatLength + " meters";
+            WriteToJsonFile(memberJsonObj);
         }
     }
 }

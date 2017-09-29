@@ -7,19 +7,36 @@
       "boats": [
         {
           "type": "Motorsailer",
-          "length": "3 meter"
+          "length": "3 meters"
+        },
+        {
+          "type": "Sailboat",
+          "length": "4 meters"
         },
         {
           "type": "Kayak/Canoe",
-          "length": "3 meter"
+          "length": "3 meters"
         }
       ]
     },
     {
-      "name": "Sofia 2",
-      "pNum": "202020-2020",
-      "uMemberId": "Member47659",
-      "boats": null
+      "name": "holabadola",
+      "pNum": "050505-0505",
+      "uMemberId": "Member38252",
+      "boats": [
+        {
+          "type": "Kayak/Canoe",
+          "length": "3 meters"
+        },
+        {
+          "type": "Kayak/Canoe",
+          "length": "3 meters"
+        },
+        {
+          "type": "Other",
+          "length": "4 meters"
+        }
+      ]
     },
     {
       "name": "Nytt namn",
@@ -28,15 +45,15 @@
       "boats": [
         {
           "type": "Other",
-          "length": "3 meter"
+          "length": "3 meters"
         },
         {
           "type": "Kayak/Canoe",
-          "length": "3 meter"
+          "length": "3 meters"
         },
         {
           "type": "Motorsailer",
-          "length": "3 meter"
+          "length": "3 meters"
         }
       ]
     }

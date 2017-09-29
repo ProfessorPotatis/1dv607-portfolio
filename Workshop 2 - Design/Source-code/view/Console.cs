@@ -22,6 +22,15 @@ namespace MemberRegistry.view
             Quit
         }
 
+        public enum BoatType
+        {
+            None,
+            Sailboat,
+            Motorsailer,
+            KayakOrCanoe,
+            Other
+        }
+
         public void DisplayInstructions()
         {
             System.Console.WriteLine();
@@ -73,6 +82,32 @@ namespace MemberRegistry.view
                     break;
                 default:
                     result = Event.None;
+                    break;
+            }
+
+            return result;
+        }
+
+        public BoatType GetBoatType(string type)
+        {
+            BoatType result;
+
+            switch (type)
+            {
+                case "s":
+                    result = BoatType.Sailboat;
+                    break;
+                case "m":
+                    result = BoatType.Motorsailer;
+                    break;
+                case "k":
+                    result = BoatType.KayakOrCanoe;
+                    break;
+                case "o":
+                    result = BoatType.Other;
+                    break;
+                default:
+                    result = BoatType.None;
                     break;
             }
 
@@ -187,7 +222,7 @@ namespace MemberRegistry.view
         public string WantsToLookAtMemberInfo()
         {
             System.Console.WriteLine("Look at specific member info");
-            System.Console.WriteLine("------------------");
+            System.Console.WriteLine("----------------------------");
             System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
             string pNum = System.Console.ReadLine();
 
@@ -197,6 +232,91 @@ namespace MemberRegistry.view
         public void ListMemberInfo(JArray member)
         {
             ListMembersVerbose(member);
+        }
+
+        public string WantsToRegisterBoat()
+        {
+            System.Console.WriteLine("Register boat");
+            System.Console.WriteLine("-------------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
+
+        public string[] GetNewBoatInfo()
+        {
+            System.Console.WriteLine("\nBoat type: ");
+            System.Console.WriteLine("(s for Sailboat, m for Motorsailer, k for Kayak/Canoe, o for Other)");
+            string newType = System.Console.ReadLine();
+            System.Console.WriteLine("\nBoat length: ");
+            System.Console.WriteLine("(in meters)");
+            string newLength = System.Console.ReadLine();
+
+            string[] boatInfo = {newType, newLength};
+
+            return boatInfo;
+        }
+
+        public void BoatRegistered()
+        {
+            System.Console.WriteLine("\nBoat was successfully registered.");
+        }
+
+        public string WantsToDeleteBoat()
+        {
+            System.Console.WriteLine("Delete boat");
+            System.Console.WriteLine("-----------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
+
+        public int GetDeleteBoatInfo()
+        {
+            System.Console.WriteLine("\nBoat index: ");
+            System.Console.WriteLine("(ex. 2 if it is the second boat in the list.)");
+            int boatIndex = Convert.ToInt32(System.Console.ReadLine());
+
+            return boatIndex;
+        }
+
+        public void BoatDeleted()
+        {
+            System.Console.WriteLine("Boat was successfully deleted.");
+        }
+
+        public string WantsToChangeBoatInfo()
+        {
+            System.Console.WriteLine("Change boat info");
+            System.Console.WriteLine("----------------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
+
+        public string[] GetUpdatedBoatInfo()
+        {
+            System.Console.WriteLine("\nBoat index: ");
+            System.Console.WriteLine("(ex. 2 if it is the second boat in the list.)");
+            string boatIndex = System.Console.ReadLine();
+            System.Console.WriteLine("\nNew boat type: ");
+            System.Console.WriteLine("(s for Sailboat, m for Motorsailer, k for Kayak/Canoe, o for Other)");
+            string newBoatType = System.Console.ReadLine();
+            System.Console.WriteLine("\nNew boat length: ");
+            System.Console.WriteLine("(in meters)");
+            string newBoatLength = System.Console.ReadLine();
+
+            string[] boatInfo = {boatIndex, newBoatType, newBoatLength};
+
+            return boatInfo;
+        }
+
+        public void BoatInfoUpdated()
+        {
+            System.Console.WriteLine("\nBoat info was successfully updated.");
         }
     }
 }

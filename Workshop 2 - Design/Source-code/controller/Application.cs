@@ -61,19 +61,121 @@ namespace MemberRegistry.controller
                         a_database.ChangeMemberInfo(memberPNum2, newName, newPNum);
                     } else
                     {
-
+                        a_view.MemberDoesNotExist();
                     }
                     break;
                 case view.Console.Event.LookMemberInfo:
                     string memberPNum3 = a_view.WantsToLookAtMemberInfo();
                     JArray choosenMember = a_database.GetMember(memberPNum3);
-                    
+
                     if (choosenMember.Count == 0)
                     {
                         a_view.MemberDoesNotExist();
                     } else
                     {
                         a_view.ListMemberInfo(choosenMember);
+                    }
+                    break;
+                case view.Console.Event.RegisterBoat:
+                    string memberPNum4 = a_view.WantsToRegisterBoat();
+                    
+                    if (a_database.MemberExist(memberPNum4))
+                    {
+                        string[] boatToBeRegistered = a_view.GetNewBoatInfo();
+                        string newType = boatToBeRegistered[0];
+                        string newLength = boatToBeRegistered[1];
+
+                        view.Console.BoatType b;
+                        b = a_view.GetBoatType(newType);
+
+                        string type = "";
+
+                        switch (b)
+                        {
+                            case view.Console.BoatType.Sailboat:
+                                type = "Sailboat";
+                                break;
+                            case view.Console.BoatType.Motorsailer:
+                                type = "Motorsailer";
+                                break;
+                            case view.Console.BoatType.KayakOrCanoe:
+                                type = "Kayak/Canoe";
+                                break;
+                            case view.Console.BoatType.Other:
+                                type = "Other";
+                                break;
+                            case view.Console.BoatType.None:
+                                type = "None";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        a_database.RegisterBoat(memberPNum4, type, newLength);
+
+                        a_view.BoatRegistered();
+                    } else
+                    {
+                        a_view.MemberDoesNotExist();
+                    }
+                    break;
+                case view.Console.Event.DeleteBoat:
+                    string memberPNum5 = a_view.WantsToDeleteBoat();
+                    if (a_database.MemberExist(memberPNum5))
+                    {
+                        JArray boatOwner = a_database.GetMember(memberPNum5);
+                        a_view.ListMemberInfo(boatOwner);
+                        int boatToBeDeleted = a_view.GetDeleteBoatInfo();
+                        a_database.DeleteBoat(memberPNum5, boatToBeDeleted);
+                        a_view.BoatDeleted();
+                    } else
+                    {
+                        a_view.MemberDoesNotExist();
+                    }
+                    break;
+                case view.Console.Event.ChangeBoatInfo:
+                    string memberPNum6 = a_view.WantsToChangeBoatInfo();
+                    if (a_database.MemberExist(memberPNum6))
+                    {
+                        JArray boatOwner2 = a_database.GetMember(memberPNum6);
+                        a_view.ListMemberInfo(boatOwner2);
+
+                        string[] updatedBoatInfo = a_view.GetUpdatedBoatInfo();
+                        int boatIndex = Convert.ToInt32(updatedBoatInfo[0]);
+                        string newBoatType = updatedBoatInfo[1];
+                        string newBoatLength = updatedBoatInfo[2];
+
+                        view.Console.BoatType b;
+                        b = a_view.GetBoatType(newBoatType);
+
+                        string type = "";
+
+                        switch (b)
+                        {
+                            case view.Console.BoatType.Sailboat:
+                                type = "Sailboat";
+                                break;
+                            case view.Console.BoatType.Motorsailer:
+                                type = "Motorsailer";
+                                break;
+                            case view.Console.BoatType.KayakOrCanoe:
+                                type = "Kayak/Canoe";
+                                break;
+                            case view.Console.BoatType.Other:
+                                type = "Other";
+                                break;
+                            case view.Console.BoatType.None:
+                                type = "None";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        a_database.ChangeBoatInfo(memberPNum6, boatIndex, type, newBoatLength);
+                        a_view.BoatInfoUpdated();
+                    } else
+                    {
+                        a_view.MemberDoesNotExist();
                     }
                     break;
                 default:
