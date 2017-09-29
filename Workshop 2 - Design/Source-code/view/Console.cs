@@ -183,5 +183,20 @@ namespace MemberRegistry.view
 
             return memberInfo;
         }
+
+        public string WantsToLookAtMemberInfo()
+        {
+            System.Console.WriteLine("Look at specific member info");
+            System.Console.WriteLine("------------------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
+
+        public void ListMemberInfo(JArray member)
+        {
+            ListMembersVerbose(member);
+        }
     }
 }

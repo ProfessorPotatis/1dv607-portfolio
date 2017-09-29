@@ -64,6 +64,18 @@ namespace MemberRegistry.controller
 
                     }
                     break;
+                case view.Console.Event.LookMemberInfo:
+                    string memberPNum3 = a_view.WantsToLookAtMemberInfo();
+                    JArray choosenMember = a_database.GetMember(memberPNum3);
+                    
+                    if (choosenMember.Count == 0)
+                    {
+                        a_view.MemberDoesNotExist();
+                    } else
+                    {
+                        a_view.ListMemberInfo(choosenMember);
+                    }
+                    break;
                 default:
                     break;
             }

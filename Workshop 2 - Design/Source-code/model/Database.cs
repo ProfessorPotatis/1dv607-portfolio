@@ -109,7 +109,6 @@ namespace MemberRegistry.model
             return false;
         }
 
-        //TODO: Skriv denna metoden, just nu är det bara en kopia av delete metoden.
         public void ChangeMemberInfo(string memberPNum, string newName, string newPNum)
         {
             string json = ReadJsonFile();
@@ -127,6 +126,21 @@ namespace MemberRegistry.model
             memberToBeUpdated["name"] = newName;
             memberToBeUpdated["pNum"] = newPNum;
             WriteToJsonFile(memberJsonObj);
+        }
+
+        public JArray GetMember(string pNum)
+        {
+            JArray members = GetAllMembers();
+            JArray specificMember = new JArray();
+
+            for (int i = 0; i < members.Count; i++)
+            {
+                if ((string)members[i]["pNum"] == pNum)
+                {
+                    specificMember.Add(members[i]);
+                }
+            }
+            return specificMember;
         }
     }
 }
