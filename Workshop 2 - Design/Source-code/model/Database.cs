@@ -87,7 +87,7 @@ namespace MemberRegistry.model
             }
         }
 
-        public void DeleteMember(string pNum)
+        public bool DeleteMember(string pNum)
         {
             if (MemberExist(pNum))
             {
@@ -104,7 +104,29 @@ namespace MemberRegistry.model
                 }
                 memberToBeDeleted.Remove();
                 WriteToJsonFile(memberJsonObj);
+                return true;
             }
+            return false;
+        }
+
+        //TODO: Skriv denna metoden, just nu är det bara en kopia av delete metoden.
+        public void ChangeMemberInfo(string memberPNum, string newName, string newPNum)
+        {
+            string json = ReadJsonFile();
+            JObject memberJsonObj = JObject.Parse(json);
+            JToken memberToBeUpdated = null;
+
+            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+            {
+                if ((string)memberJsonObj["members"][i]["pNum"] == memberPNum)
+                {
+                    memberToBeUpdated = memberJsonObj["members"][i];
+                }
+            }
+
+            memberToBeUpdated["name"] = newName;
+            memberToBeUpdated["pNum"] = newPNum;
+            WriteToJsonFile(memberJsonObj);
         }
     }
 }

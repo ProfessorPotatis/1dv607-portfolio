@@ -43,7 +43,26 @@ namespace MemberRegistry.controller
                     break;
                 case view.Console.Event.DeleteMember:
                     string memberPNum = a_view.WantsToDeleteMember();
-                    a_database.DeleteMember(memberPNum);
+                    if (a_database.DeleteMember(memberPNum))
+                    {
+                        a_view.MemberDeleted();
+                    } else
+                    {
+                        a_view.MemberDoesNotExist();
+                    }
+                    break;
+                case view.Console.Event.ChangeMemberInfo:
+                    string memberPNum2 = a_view.WantsToChangeMemberInfo();
+                    if (a_database.MemberExist(memberPNum2))
+                    {
+                        string[] updatedMemberInfo = a_view.GetUpdatedMemberInfo();
+                        string newName = updatedMemberInfo[0];
+                        string newPNum = updatedMemberInfo[1];
+                        a_database.ChangeMemberInfo(memberPNum2, newName, newPNum);
+                    } else
+                    {
+
+                    }
                     break;
                 default:
                     break;

@@ -143,11 +143,45 @@ namespace MemberRegistry.view
         public string WantsToDeleteMember()
         {
             System.Console.WriteLine("Delete member");
-            System.Console.WriteLine("-----------------");
+            System.Console.WriteLine("-------------");
             System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
             string pNum = System.Console.ReadLine();
 
             return pNum;
+        }
+
+        public void MemberDeleted()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Member was successfully deleted.");
+        }
+
+        public void MemberDoesNotExist()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Sorry. Member does not exist.");
+        }
+
+        public string WantsToChangeMemberInfo()
+        {
+            System.Console.WriteLine("Change member info");
+            System.Console.WriteLine("------------------");
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            return pNum;
+        }
+
+        public string[] GetUpdatedMemberInfo()
+        {
+            System.Console.WriteLine("New full name: ");
+            string newName = System.Console.ReadLine();
+            System.Console.WriteLine("New personal number (YYMMDD-xxxx): ");
+            string newPNum = System.Console.ReadLine();
+
+            string[] memberInfo = {newName, newPNum};
+
+            return memberInfo;
         }
     }
 }
