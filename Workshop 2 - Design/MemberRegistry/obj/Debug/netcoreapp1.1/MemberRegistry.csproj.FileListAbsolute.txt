@@ -1,0 +1,10 @@
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/Debug/netcoreapp1.1/MemberRegistry.deps.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/Debug/netcoreapp1.1/MemberRegistry.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/Debug/netcoreapp1.1/MemberRegistry.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/Debug/netcoreapp1.1/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/Debug/netcoreapp1.1/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/Debug/netcoreapp1.1/MemberRegistry.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/Debug/netcoreapp1.1/MemberRegistry.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/Debug/netcoreapp1.1/MemberRegistry.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/Debug/netcoreapp1.1/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/Debug/netcoreapp1.1/MemberRegistry.pdb
