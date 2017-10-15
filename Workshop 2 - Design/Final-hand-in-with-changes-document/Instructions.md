@@ -1,6 +1,6 @@
 ## Workshop 2
 To run the application:  
-1. Go to: 
+1. Go to: https://github.com/ProfessorPotatis/1dv607-portfolio/tree/master/Workshop%202%20-%20Design/Final-hand-in-with-changes-document
 2. Download the .zip file for your OS.  
 3. Extract the folder.  
 4. Open the executable.  
