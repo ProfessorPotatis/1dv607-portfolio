@@ -9,10 +9,11 @@ In Workshop 2 - Design -> The .pdf must be downloaded to be viewed properly. (Or
 
 ## Workshop 2
 To run the application:  
-1. Download the .zip file for your OS.  
-2. Extract the folder.  
-3. Open the executable.  
-4. Follow the instructions in the application.
+1. Go to: https://github.com/ProfessorPotatis/1dv607-portfolio/tree/master/Workshop%202%20-%20Design/Final-hand-in-with-changes-document
+2. Download the .zip file for your OS.  
+3. Extract the folder.  
+4. Open the executable.  
+5. Follow the instructions in the application.
 
 To compile the source code, follow the instructions in this article:  
 1. https://blogs.msdn.microsoft.com/luisdem/2017/03/19/net-core-1-1-how-to-publish-a-self-contained-application/  
