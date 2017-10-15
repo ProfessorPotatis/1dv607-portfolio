@@ -1,0 +1,33 @@
+After reading the reviews I made the following changes to my source code:- Refactored model.Database into: model.Database, model.Member, model.Boat. I took and placed the business logic for Member and Boat in their respective model classes. This shrank the model class Database to just handle database logic.
+
+– Refactored view.Console into: view.Console, view.Member, view.Boat. Member and Boat handle their respective related view. Console handle instructions, menu and exceptions.
+– In view.Member output for compact and verbose list I changed string ”MemberId” to output ”Member ID” instead. This would according to the review up the readability of the lists.
+
+– In view.Member I added a ”title” to the list print outs.
+
+– In view.Member I added a confirmation message after user info has been updated. Added a call to this view.Member function in controller.Member.
+
+– In view.Member I added validation function for personal number using Regex.
+
+– In BoatType.cs I removed the ”None” option. If a user does not specify a boat type when registering a boat or changing a boats information, the boat type is automatically set to ”Other”.
+
+– Added some comments.
+
+– Refactored the larger methods in controller.Boat.
+
+———————————————————————————————————————————————————
+
+After making the above changes to my source code I naturally had to update my sequence diagrams and class diagram. I added key attributes and operations to my class diagram and updated the dependency, association and inheritance arrows.
+
+Updated the instructions, providing the link for the executables directly in the instruction.md.
+
+———————————————————————————————————————————————————
+
+I did not make the following suggested changes to my source code:
+
+– Present menu after each action is complete. I did not do this as it would obstruct the overview of the output and force the user to scroll up to see the result of their query. Experienced users of the system might also find it annoying to have the menu printed out after each action, as they have already memorized the different actions one is able to make.
+
+– Numbered member list to make it easier when registering a boat or changing a members info etc. I did not do this as the focus of the workshop wasn’t to make a usable user interface. Users just have to know the personal number of the member they want to make changes to.
+
+
+
