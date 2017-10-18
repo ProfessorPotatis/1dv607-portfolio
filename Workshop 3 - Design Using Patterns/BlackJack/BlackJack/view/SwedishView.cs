@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace BlackJack.view
 {
@@ -36,6 +37,13 @@ namespace BlackJack.view
             }
 
             return Event.None;
+        }
+
+        public void DisplayDealingCard()
+        {
+            System.Console.WriteLine("\nDelar ut kort...");
+            Thread.Sleep(1000);
+            System.Console.Clear();
         }
 
         public void DisplayCard(model.Card a_card)

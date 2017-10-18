@@ -28,5 +28,6 @@
     <Content Include="model\rules\IWinnerStrategy.cs" />
     <Content Include="model\rules\DealerWinsOnEqualWinnerStrategy.cs" />
     <Content Include="model\rules\PlayerWinsOnEqualWinnerStrategy.cs" />
+    <Content Include="model\BlackJackObserver.cs" />
   </ItemGroup>
 </Project>

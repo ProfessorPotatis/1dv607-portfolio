@@ -5,23 +5,23 @@ using System.Text;
 
 namespace BlackJack.controller
 {
-    class PlayGame
+    class PlayGame : model.BlackJackObserver
     {
         private model.Game m_game;
         private view.IView m_view;
 
         public PlayGame(model.Game a_game, view.IView a_view)
         {
-            this.m_game = a_game;
-            this.m_view = a_view;
+            m_game = a_game;
+            m_view = a_view;
+
+            m_game.AddBlackJackObserver(this);
         }
 
         public bool Play()
         {
             m_view.DisplayWelcomeMessage();
-            
-            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
-            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+            this.DisplayHands();
 
             if (m_game.IsGameOver())
             {
@@ -44,6 +44,19 @@ namespace BlackJack.controller
             }
 
             return e != view.Event.Quit;
+        }
+
+        private void DisplayHands()
+        {
+            m_view.DisplayDealerHand(m_game.GetDealerHand(), m_game.GetDealerScore());
+            m_view.DisplayPlayerHand(m_game.GetPlayerHand(), m_game.GetPlayerScore());
+        }
+
+        public void CardDealt()
+        {
+            m_view.DisplayDealingCard();
+            m_view.DisplayWelcomeMessage();
+            this.DisplayHands();
         }
     }
 }
