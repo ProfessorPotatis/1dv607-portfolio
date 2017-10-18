@@ -16,5 +16,10 @@ namespace BlackJack.model.rules
         {
             return new AmericanNewGameStrategy();
         }
+
+        public IWinnerStrategy GetWinnerRule()
+        {
+            return new PlayerWinsOnEqualWinnerStrategy();
+        }
     }
 }

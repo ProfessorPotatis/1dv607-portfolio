@@ -25,5 +25,8 @@
     <Content Include="view\SwedishView.cs" />
     <Content Include="view\Event.cs" />
     <Content Include="model\rules\Soft17HitStrategy.cs" />
+    <Content Include="model\rules\IWinnerStrategy.cs" />
+    <Content Include="model\rules\DealerWinsOnEqualWinnerStrategy.cs" />
+    <Content Include="model\rules\PlayerWinsOnEqualWinnerStrategy.cs" />
   </ItemGroup>
 </Project>
