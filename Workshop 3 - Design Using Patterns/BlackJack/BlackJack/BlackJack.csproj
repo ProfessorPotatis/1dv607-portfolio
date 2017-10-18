@@ -23,5 +23,6 @@
     <Content Include="view\IView.cs" />
     <Content Include="view\SimpleView.cs" />
     <Content Include="view\SwedishView.cs" />
+    <Content Include="view\Event.cs" />
   </ItemGroup>
 </Project>
