@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/BlackJack.csproj",
+      "projectUniqueName": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/BlackJack/BlackJack.csproj",
       "projectName": "BlackJack",
-      "projectPath": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/BlackJack.csproj",
+      "projectPath": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/BlackJack/BlackJack.csproj",
       "packagesPath": "/Users/sofiakristiansen/.nuget/packages/",
-      "outputPath": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/",
+      "outputPath": "/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/BlackJack/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
