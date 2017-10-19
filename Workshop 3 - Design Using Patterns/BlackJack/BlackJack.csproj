@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64;ubuntu.16.10-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+    <Content Include=".vscode\tasks.json" />
+    <Content Include="Program.cs" />
+    <Content Include="model\Game.cs" />
+    <Content Include="model\Player.cs" />
+    <Content Include="model\Deck.cs" />
+    <Content Include="model\Dealer.cs" />
+    <Content Include="model\Card.cs" />
+    <Content Include="model\rules\AmericanNewGameStrategy.cs" />
+    <Content Include="model\rules\BasicHitStrategy.cs" />
+    <Content Include="model\rules\IHitStrategy.cs" />
+    <Content Include="model\rules\INewGameStrategy.cs" />
+    <Content Include="model\rules\InternationalNewGameStrategy.cs" />
+    <Content Include="model\rules\RulesFactory.cs" />
+    <Content Include="controller\PlayGame.cs" />
+    <Content Include="view\IView.cs" />
+    <Content Include="view\SimpleView.cs" />
+    <Content Include="view\SwedishView.cs" />
+    <Content Include="view\Event.cs" />
+    <Content Include="model\rules\Soft17HitStrategy.cs" />
+    <Content Include="model\rules\IWinnerStrategy.cs" />
+    <Content Include="model\rules\DealerWinsOnEqualWinnerStrategy.cs" />
+    <Content Include="model\rules\PlayerWinsOnEqualWinnerStrategy.cs" />
+    <Content Include="model\BlackJackObserver.cs" />
+  </ItemGroup>
+</Project>

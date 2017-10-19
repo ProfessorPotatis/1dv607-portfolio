@@ -1,0 +1,13 @@
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/libhostpolicy.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/libhostfxr.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack.deps.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/bin/release/netcoreapp2.0/osx.10.11-x64/BlackJack.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/release/netcoreapp2.0/osx.10.11-x64/BlackJack.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/release/netcoreapp2.0/osx.10.11-x64/BlackJack.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/release/netcoreapp2.0/osx.10.11-x64/BlackJack.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/release/netcoreapp2.0/osx.10.11-x64/BlackJack.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 3 - Design Using Patterns/BlackJack/obj/release/netcoreapp2.0/osx.10.11-x64/BlackJack.pdb
