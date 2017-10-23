@@ -1,0 +1,1 @@
+Assumptions:Ð The library has books, e-books, CD:s, DVD:s and magazines available to borrow.Ð All of the above can be reserved.Ð A reservation has a start and end date.Ð The library provides a number of third party payment options.Ð Anyone with an account can reserve a computer at the library.
