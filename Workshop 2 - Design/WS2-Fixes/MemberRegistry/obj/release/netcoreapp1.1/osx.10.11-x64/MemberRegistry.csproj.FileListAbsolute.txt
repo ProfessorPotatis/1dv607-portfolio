@@ -1,0 +1,39 @@
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostpolicy.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostfxr.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.deps.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostpolicy.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostfxr.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.deps.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/Workshop 2 - Design/Final-hand-in-with-changes-document/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostpolicy.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/libhostfxr.dylib
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.deps.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.runtimeconfig.dev.json
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/bin/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.csproj.CoreCompileInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfoInputs.cache
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.AssemblyInfo.cs
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.dll
+/Users/sofiakristiansen/Desktop/1dv607/1dv607-portfolio/1dv607-portfolio/Workshop 2 - Design/WS2-Fixes/MemberRegistry/obj/release/netcoreapp1.1/osx.10.11-x64/MemberRegistry.pdb

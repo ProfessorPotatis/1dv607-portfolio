@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <RuntimeFrameworkVersion>1.1.1</RuntimeFrameworkVersion>
+    <RuntimeIdentifiers>win10-x64;osx.10.11-x64;ubuntu.16.10-x64</RuntimeIdentifiers>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="MimeKit" Version="1.18.1" />
+    <Content Include="controller\Member.cs" />
+    <Content Include="view\Member.cs" />
+    <Content Include=".vscode\launch.json" />
+    <Content Include="view\Console.cs" />
+    <Content Include="view\Boat.cs" />
+    <Content Include="controller\Boat.cs" />
+    <Content Include="controller\Application.cs" />
+    <Content Include="Program.cs" />
+    <Content Include="model\Boat.cs" />
+    <Content Include="model\Database.cs" />
+    <Content Include="model\Member.cs" />
+  </ItemGroup>
+</Project>

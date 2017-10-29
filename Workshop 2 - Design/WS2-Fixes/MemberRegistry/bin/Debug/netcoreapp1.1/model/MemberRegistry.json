@@ -1,0 +1,82 @@
+{
+  "members": [
+    {
+      "name": "Sugar Plum",
+      "pNum": "303030-3030",
+      "uMemberId": "Member91190",
+      "boats": [
+        {
+          "type": "Sailboat",
+          "length": "4 meters"
+        },
+        {
+          "type": "Kayak/Canoe",
+          "length": "6 meters"
+        },
+        {
+          "type": "Other",
+          "length": "5 meters"
+        }
+      ]
+    },
+    {
+      "name": "Test",
+      "pNum": "091091-0910",
+      "uMemberId": "Member94849",
+      "boats": []
+    },
+    {
+      "name": "Testing slutmeddelande",
+      "pNum": "090909-0909",
+      "uMemberId": "Member68888",
+      "boats": [
+        {
+          "type": "Other",
+          "length": "6 meters"
+        }
+      ]
+    },
+    {
+      "name": "Koala Bear",
+      "pNum": "333333-3333",
+      "uMemberId": "Member69026",
+      "boats": [
+        {
+          "type": "Sailboat",
+          "length": "7 meters"
+        }
+      ]
+    },
+    {
+      "name": "Edited again",
+      "pNum": "050505-0505",
+      "uMemberId": "Member38252",
+      "boats": [
+        {
+          "type": "Kayak/Canoe",
+          "length": "5 meters"
+        },
+        {
+          "type": "Motorsailer",
+          "length": "6 meters"
+        },
+        {
+          "type": "Sailboat",
+          "length": "9 meters"
+        },
+        {
+          "type": "Other",
+          "length": "5 meters"
+        },
+        {
+          "type": "Sailboat",
+          "length": "7 meters"
+        },
+        {
+          "type": "Motorsailer",
+          "length": "5 meters"
+        }
+      ]
+    }
+  ]
+}

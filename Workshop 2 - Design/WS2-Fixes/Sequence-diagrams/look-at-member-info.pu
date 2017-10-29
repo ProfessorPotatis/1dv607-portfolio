@@ -1,0 +1,25 @@
+@startuml
+title Sequence diagram:\nLook at member info
+participant Program
+participant "controller::Application"
+participant "controller::Member"
+participant "view::Console"
+participant "view::Member"
+participant "model::Member"
+
+Program -> "controller::Application": Run()
+"controller::Application" -> "view::Console": DisplayInstructions()
+"controller::Application" -> "view::Console": GetEvent()
+"controller::Application" -> "controller::Member": ListMemberInfo()
+"controller::Member" -> "view::Member": WantsToLookAtMemberInfo()
+"view::Member" -> "view::Member": GetPersonalNumber()
+"view::Member" -> "view::Member": CheckPersonalNumber()
+"view::Member" -> "view::Member": CheckInputFieldForContent(pNum)
+"controller::Member" -> "model::Member": GetMember(memberPNum)
+
+alt Member exist = true
+    "controller::Member" -> "view::Member": ListMemberInfo(choosenMember)
+else Member exist = false
+    "controller::Member" -> "view::Member": MemberDoesNotExist()
+end
+@enduml
