@@ -7,15 +7,31 @@ namespace MemberRegistry.view
 {
     class Member
     {
+        private view.Console _console;
+
+        public Member()
+        {
+            Console = new view.Console();
+        }
+
+        public view.Console Console
+        {
+            get { return _console; }
+            set
+            {
+                _console = value;
+            }
+        }
+
         public string[] WantsToCreateNewMember()
         {
             System.Console.WriteLine("Create new member");
             System.Console.WriteLine("-----------------");
             System.Console.WriteLine("Full name: ");
             string name = System.Console.ReadLine();
-            string pNum = GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
-            if (CheckInputFieldForContent(name))
+            if (Console.CheckInputFieldForContent(name))
             {
                 string[] memberInfo = {name, pNum};
                 return memberInfo;
@@ -24,41 +40,6 @@ namespace MemberRegistry.view
             {
                 throw new IndexOutOfRangeException("\nERROR: Name has to be filled in.");
             }  
-        }
-
-        public string GetPersonalNumber()
-        {
-            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
-            string pNum = System.Console.ReadLine();
-
-            if (CheckPersonalNumber(pNum))
-            {
-                return pNum;
-            }
-            else
-            {
-                throw new IndexOutOfRangeException("\nERROR: Personal number has to match YYMMDD-xxxx.");
-            }
-        }
-
-        private bool CheckPersonalNumber(string pNum) {
-            Regex personalNumber = new Regex(@"^[0-9]{6}-[0-9]{4}$");
-            Match match = personalNumber.Match(pNum);
-            
-            if (CheckInputFieldForContent(pNum) && match.Success)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public bool CheckInputFieldForContent(string input)
-        {
-            if (!string.IsNullOrEmpty(input))
-            {
-                return true;
-            }
-            return false;
         }
 
         public void MemberAlreadyExist()
@@ -102,7 +83,7 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("Delete member");
             System.Console.WriteLine("-------------");
-            string pNum = GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
@@ -115,15 +96,14 @@ namespace MemberRegistry.view
 
         public void MemberDoesNotExist()
         {
-            System.Console.WriteLine();
-            System.Console.WriteLine("Sorry. Member does not exist.");
+            Console.MemberDoesNotExist();
         }
 
         public string WantsToChangeMemberInfo()
         {
             System.Console.WriteLine("Change member info");
             System.Console.WriteLine("------------------");
-            string pNum = GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
@@ -132,9 +112,9 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("New full name: ");
             string newName = System.Console.ReadLine();
-            string newPNum = GetPersonalNumber();
+            string newPNum = Console.GetPersonalNumber();
 
-            if (CheckInputFieldForContent(newName))
+            if (Console.CheckInputFieldForContent(newName))
             {
                 string[] memberInfo = {newName, newPNum};
                 return memberInfo;
@@ -155,14 +135,14 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("Look at specific member info");
             System.Console.WriteLine("----------------------------");
-            string pNum = GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
 
         public void ListMemberInfo(JArray member)
         {
-            ListMembersVerbose(member);
+            Console.ListMemberInfo(member);
         }
 
     }

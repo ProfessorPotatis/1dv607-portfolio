@@ -44,21 +44,21 @@
         {
           "type": "Sailboat",
           "length": "7 meters"
+        },
+        {
+          "type": "Motorsailer",
+          "length": "10 meters"
         }
       ]
     },
     {
-      "name": "Edited again",
+      "name": "EDIT EDITED",
       "pNum": "050505-0505",
       "uMemberId": "Member38252",
       "boats": [
         {
           "type": "Kayak/Canoe",
           "length": "5 meters"
-        },
-        {
-          "type": "Motorsailer",
-          "length": "6 meters"
         },
         {
           "type": "Sailboat",
@@ -70,11 +70,15 @@
         },
         {
           "type": "Sailboat",
-          "length": "7 meters"
+          "length": "14 meters"
         },
         {
           "type": "Motorsailer",
           "length": "5 meters"
+        },
+        {
+          "type": "Kayak/Canoe",
+          "length": "13 meters"
         }
       ]
     }

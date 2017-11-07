@@ -7,16 +7,12 @@ namespace MemberRegistry.controller
     class Boat
     {
         private view.Boat _view;
-        private view.Member _memberView;
         private model.Boat _database;
-        private model.Member _memberModel;
 
         public Boat()
         {
             View = new view.Boat();
-            MemberView = new view.Member();
             Database = new model.Boat();
-            MemberModel = new model.Member();
         }
 
         public view.Boat View
@@ -25,15 +21,6 @@ namespace MemberRegistry.controller
             set
             {
                 _view = value;
-            }
-        }
-
-        public view.Member MemberView
-        {
-            get { return _memberView; }
-            set
-            {
-                _memberView = value;
             }
         }
 
@@ -46,20 +33,11 @@ namespace MemberRegistry.controller
             }
         }
 
-        public model.Member MemberModel
-        {
-            get { return _memberModel; }
-            set
-            {
-                _memberModel = value;
-            }
-        }
-
         public void RegisterBoat()
         {
             string memberPNum = View.WantsToRegisterBoat();
                     
-            if (MemberModel.MemberExist(memberPNum))
+            if (Database.MemberExist(memberPNum))
             {
                 string[] boatToBeRegistered = View.GetNewBoatInfo();
                 string newType = boatToBeRegistered[0];
@@ -72,7 +50,7 @@ namespace MemberRegistry.controller
             } 
             else
             {
-                MemberView.MemberDoesNotExist();
+                View.MemberDoesNotExist();
             }
         }
 
@@ -110,7 +88,7 @@ namespace MemberRegistry.controller
         {
             string memberPNum = View.WantsToDeleteBoat();
 
-            if (MemberModel.MemberExist(memberPNum))
+            if (Database.MemberExist(memberPNum))
             {
                 int numberOfBoatsOwned = PresentMemberBoats(memberPNum);
                 string boatToBeDeleted = View.GetDeleteBoatInfo();
@@ -124,15 +102,15 @@ namespace MemberRegistry.controller
             } 
             else
             {
-                MemberView.MemberDoesNotExist();
+                View.MemberDoesNotExist();
             }
         }
 
         private int PresentMemberBoats(string memberPNum)
         {
-            JArray boatOwner = MemberModel.GetMember(memberPNum);
+            JArray boatOwner = Database.GetMember(memberPNum);
             int numberOfBoatsOwned = boatOwner[0]["boats"].Count();
-            MemberView.ListMemberInfo(boatOwner);
+            View.ListMemberInfo(boatOwner);
 
             return numberOfBoatsOwned;
         }
@@ -167,7 +145,7 @@ namespace MemberRegistry.controller
         {
             string memberPNum = View.WantsToChangeBoatInfo();
 
-            if (MemberModel.MemberExist(memberPNum))
+            if (Database.MemberExist(memberPNum))
             {
                 int numberOfBoatsOwned = PresentMemberBoats(memberPNum);
 
@@ -189,7 +167,7 @@ namespace MemberRegistry.controller
             }
             else
             {
-                MemberView.MemberDoesNotExist();
+                View.MemberDoesNotExist();
             }
         }
     }

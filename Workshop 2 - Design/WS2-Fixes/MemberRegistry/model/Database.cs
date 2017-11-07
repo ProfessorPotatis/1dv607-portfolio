@@ -38,5 +38,65 @@ namespace MemberRegistry.model
                 writer.Write(memberJsonObj);
             }
         }
+
+        public JObject GetMemberJsonObject()
+        {
+            string json = ReadJsonFile();
+            JObject memberJsonObj = JObject.Parse(json);
+
+            return memberJsonObj;
+        }
+
+        public JToken SelectedMember(string pNum, JObject memberJsonObj)
+        {
+            JToken member = null;
+
+            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
+            {
+                if ((string)memberJsonObj["members"][i]["pNum"] == pNum)
+                {
+                    member = memberJsonObj["members"][i];
+                }
+            }
+
+            return member;
+        }
+
+        public bool MemberExist(string pNum)
+        {
+            JArray members = GetAllMembers();
+
+            for (int i = 0; i < members.Count; i++)
+            {
+                if ((string)members[i]["pNum"] == pNum)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public JArray GetAllMembers()
+        {
+            string json = ReadJsonFile();
+            JArray members = ConvertJsonToJArray(json);
+
+            return members;
+        }
+
+        public JArray GetMember(string pNum)
+        {
+            JArray members = GetAllMembers();
+            JArray specificMember = new JArray();
+
+            for (int i = 0; i < members.Count; i++)
+            {
+                if ((string)members[i]["pNum"] == pNum)
+                {
+                    specificMember.Add(members[i]);
+                }
+            }
+            return specificMember;
+        }
     }
 }

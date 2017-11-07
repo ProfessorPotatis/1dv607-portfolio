@@ -20,5 +20,7 @@
     <Content Include="model\Boat.cs" />
     <Content Include="model\Database.cs" />
     <Content Include="model\Member.cs" />
+    <Content Include="view\BoatType.cs" />
+    <Content Include="view\Event.cs" />
   </ItemGroup>
 </Project>

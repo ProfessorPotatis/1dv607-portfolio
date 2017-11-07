@@ -7,22 +7,11 @@ namespace MemberRegistry.model
 {
     class Boat
     {
-        private model.Member _member;
         private model.Database _database;
 
         public Boat()
         {
-            Member = new model.Member();
             Database = new model.Database();
-        }
-
-        public model.Member Member
-        {
-            get { return _member; }
-            set
-            {
-                _member = value;
-            }
         }
 
         public model.Database Database
@@ -34,9 +23,19 @@ namespace MemberRegistry.model
             }
         }
 
+        public bool MemberExist(string pNum)
+        {
+            return Database.MemberExist(pNum);
+        }
+
+        public JArray GetMember(string pNum)
+        {
+            return Database.GetMember(pNum);
+        }
+
         public void RegisterBoat(string pNum, string boatType, string boatLength)
         {
-            JObject memberJsonObj = Member.GetMemberJsonObject();
+            JObject memberJsonObj = Database.GetMemberJsonObject();
             JArray memberToAddBoatTo = new JArray();
 
             for (int i = 0; i < memberJsonObj["members"].Count(); i++)
@@ -58,8 +57,8 @@ namespace MemberRegistry.model
 
         public void DeleteBoat(string pNum, int boatIndex)
         {
-            JObject memberJsonObj = Member.GetMemberJsonObject();
-            JToken memberToDeleteBoatFrom = Member.SelectedMember(pNum, memberJsonObj);
+            JObject memberJsonObj = Database.GetMemberJsonObject();
+            JToken memberToDeleteBoatFrom = Database.SelectedMember(pNum, memberJsonObj);
  
             memberToDeleteBoatFrom["boats"][boatIndex - 1].Remove();
             Database.WriteToJsonFile(memberJsonObj);
@@ -67,7 +66,7 @@ namespace MemberRegistry.model
 
         public void ChangeBoatInfo(string memberPNum, int boatIndex, string newBoatType, string newBoatLength)
         {
-            JObject memberJsonObj = Member.GetMemberJsonObject();
+            JObject memberJsonObj = Database.GetMemberJsonObject();
             JToken boatToBeUpdated = null;
 
             for (int i = 0; i < memberJsonObj["members"].Count(); i++)

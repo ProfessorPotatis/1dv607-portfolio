@@ -6,19 +6,19 @@ namespace MemberRegistry.view
 {
     class Boat
     {
-        private view.Member _member;
+        private view.Console _console;
 
         public Boat()
         {
-            Member = new view.Member();
+            Console = new view.Console();
         }
 
-        public view.Member Member
+        public view.Console Console
         {
-            get { return _member; }
+            get { return _console; }
             set
             {
-                _member = value;
+                _console = value;
             }
         }
 
@@ -52,7 +52,7 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("Register boat");
             System.Console.WriteLine("-------------");
-            string pNum = Member.GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
@@ -66,7 +66,7 @@ namespace MemberRegistry.view
             System.Console.WriteLine("(in meters)");
             string newLength = System.Console.ReadLine();
 
-            if (Member.CheckInputFieldForContent(newType) && Member.CheckInputFieldForContent(newLength))
+            if (Console.CheckInputFieldForContent(newType) && Console.CheckInputFieldForContent(newLength))
             {
                 string[] boatInfo = {newType, newLength};
                 return boatInfo;
@@ -86,7 +86,7 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("Delete boat");
             System.Console.WriteLine("-----------");
-            string pNum = Member.GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
@@ -97,7 +97,7 @@ namespace MemberRegistry.view
             System.Console.WriteLine("(ex. 2 if it is the second boat in the list.)");
             string boatIndex = System.Console.ReadLine();
 
-            if (Member.CheckInputFieldForContent(boatIndex))
+            if (Console.CheckInputFieldForContent(boatIndex))
             {
                 return boatIndex;
             }
@@ -116,7 +116,7 @@ namespace MemberRegistry.view
         {
             System.Console.WriteLine("Change boat info");
             System.Console.WriteLine("----------------");
-            string pNum = Member.GetPersonalNumber();
+            string pNum = Console.GetPersonalNumber();
 
             return pNum;
         }
@@ -133,7 +133,7 @@ namespace MemberRegistry.view
             System.Console.WriteLine("(in meters)");
             string newBoatLength = System.Console.ReadLine();
 
-            if (Member.CheckInputFieldForContent(boatIndex) && Member.CheckInputFieldForContent(newBoatType) && Member.CheckInputFieldForContent(newBoatLength))
+            if (Console.CheckInputFieldForContent(boatIndex) && Console.CheckInputFieldForContent(newBoatType) && Console.CheckInputFieldForContent(newBoatLength))
             {
                 string[] boatInfo = {boatIndex, newBoatType, newBoatLength};
                 return boatInfo;
@@ -147,6 +147,16 @@ namespace MemberRegistry.view
         public void BoatInfoUpdated()
         {
             System.Console.WriteLine("\nBoat info was successfully updated.");
+        }
+
+        public void MemberDoesNotExist()
+        {
+            Console.MemberDoesNotExist();
+        }
+
+        public void ListMemberInfo(JArray member)
+        {
+            Console.ListMemberInfo(member);
         }
     }
 }

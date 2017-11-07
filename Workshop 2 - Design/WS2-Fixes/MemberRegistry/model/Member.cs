@@ -23,28 +23,6 @@ namespace MemberRegistry.model
             }
         }
 
-        public bool MemberExist(string pNum)
-        {
-            JArray members = GetAllMembers();
-
-            for (int i = 0; i < members.Count; i++)
-            {
-                if ((string)members[i]["pNum"] == pNum)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public JArray GetAllMembers()
-        {
-            string json = Database.ReadJsonFile();
-            JArray members = Database.ConvertJsonToJArray(json);
-
-            return members;
-        }
-
         public string GenerateUniqueMemberId()
         {
             Random rnd = new Random();
@@ -78,10 +56,10 @@ namespace MemberRegistry.model
 
         public bool DeleteMember(string pNum)
         {
-            if (MemberExist(pNum))
+            if (Database.MemberExist(pNum))
             {
-                JObject memberJsonObj = GetMemberJsonObject();
-                JToken memberToBeDeleted = SelectedMember(pNum, memberJsonObj);
+                JObject memberJsonObj = Database.GetMemberJsonObject();
+                JToken memberToBeDeleted = Database.SelectedMember(pNum, memberJsonObj);
 
                 memberToBeDeleted.Remove();
                 Database.WriteToJsonFile(memberJsonObj);
@@ -90,52 +68,29 @@ namespace MemberRegistry.model
             return false;
         }
 
-        public JObject GetMemberJsonObject()
-        {
-            string json = Database.ReadJsonFile();
-            JObject memberJsonObj = JObject.Parse(json);
-
-            return memberJsonObj;
-        }
-
-        public JToken SelectedMember(string pNum, JObject memberJsonObj)
-        {
-            JToken member = null;
-
-            for (int i = 0; i < memberJsonObj["members"].Count(); i++)
-            {
-                if ((string)memberJsonObj["members"][i]["pNum"] == pNum)
-                {
-                    member = memberJsonObj["members"][i];
-                }
-            }
-
-            return member;
-        }
-
         public void ChangeMemberInfo(string pNum, string newName, string newPNum)
         {
-            JObject memberJsonObj = GetMemberJsonObject();
-            JToken memberToBeUpdated = SelectedMember(pNum, memberJsonObj);
+            JObject memberJsonObj = Database.GetMemberJsonObject();
+            JToken memberToBeUpdated = Database.SelectedMember(pNum, memberJsonObj);
 
             memberToBeUpdated["name"] = newName;
             memberToBeUpdated["pNum"] = newPNum;
             Database.WriteToJsonFile(memberJsonObj);
         }
 
+        public bool MemberExist(string pNum)
+        {
+            return Database.MemberExist(pNum);
+        }
+
         public JArray GetMember(string pNum)
         {
-            JArray members = GetAllMembers();
-            JArray specificMember = new JArray();
-
-            for (int i = 0; i < members.Count; i++)
-            {
-                if ((string)members[i]["pNum"] == pNum)
-                {
-                    specificMember.Add(members[i]);
-                }
-            }
-            return specificMember;
+            return Database.GetMember(pNum);
         }
+
+        public JArray GetAllMembers()
+        {
+            return Database.GetAllMembers();
+        }        
     }
 }

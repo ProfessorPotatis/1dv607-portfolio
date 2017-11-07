@@ -1,4 +1,7 @@
 using System;
+using System.Text.RegularExpressions;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace MemberRegistry.view
 {
@@ -82,6 +85,60 @@ namespace MemberRegistry.view
         public void WriteException(Exception ex)
         {
             System.Console.WriteLine(ex.Message);
+        }
+
+        public string GetPersonalNumber()
+        {
+            System.Console.WriteLine("Personal number (YYMMDD-xxxx): ");
+            string pNum = System.Console.ReadLine();
+
+            if (CheckPersonalNumber(pNum))
+            {
+                return pNum;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException("\nERROR: Personal number has to match YYMMDD-xxxx.");
+            }
+        }
+
+        private bool CheckPersonalNumber(string pNum) {
+            Regex personalNumber = new Regex(@"^[0-9]{6}-[0-9]{4}$");
+            Match match = personalNumber.Match(pNum);
+            
+            if (CheckInputFieldForContent(pNum) && match.Success)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public bool CheckInputFieldForContent(string input)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void MemberDoesNotExist()
+        {
+            System.Console.WriteLine();
+            System.Console.WriteLine("Sorry. Member does not exist.");
+        }
+
+        public void ListMemberInfo(JArray member)
+        {
+            System.Console.WriteLine("Member");
+            System.Console.WriteLine("------");
+
+            System.Console.WriteLine("\nName: " + member[0]["name"] + "\nPersonal number: " + member[0]["pNum"] + "\nMember ID: " + member[0]["uMemberId"]);
+            System.Console.WriteLine("Boats: ");
+            for (int x = 0; x < member[0]["boats"].Count(); x++)
+            {
+                System.Console.WriteLine("  " + member[0]["boats"][x]["type"] + ", " + member[0]["boats"][x]["length"]);
+            }
         }
     }
 }
